@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ずんだあああああ｜公式ホームページ</title>
+  <meta name="description" content="YouTubeチャンネル『ずんだあああああ』の公式ホームページ。最新動画、配信スケジュール、プロフィールなど。" />
+  <meta property="og:title" content="ずんだあああああ｜公式ホームページ" />
+  <meta property="og:description" content="最新動画、配信スケジュール、プロフィール。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="theme-color" content="#8ddf3d" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0e0a;
+      --panel: #131711;
+      --text: #e8f6de;
+      --muted: #bcd7ad;
+      --brand: #8ddf3d;
+      --brand-ink: #0f2a00;
+      --link: #a5ff5a;
+      --shadow: 0 10px 30px rgba(141,223,61,0.18);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7fff0; 
+        --panel: #ffffff;
+        --text: #10210a;
+        --muted: #507044;
+        --brand: #78cf2b;
+        --brand-ink: #0a1e00;
+        --link: #2f7d00;
+        --shadow: 0 8px 24px rgba(47,125,0,0.12);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(141,223,61,.12), transparent 60%),
+                  radial-gradient(1200px 600px at 110% 10%, rgba(141,223,61,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      letter-spacing: .015em;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{width:min(1100px, 92vw); margin-inline:auto}
+
+    header{position:sticky; top:0; z-index:20; backdrop-filter:saturate(140%) blur(10px)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:44px; height:44px; border-radius:14px; background:linear-gradient(145deg, #a0ff64, #6ac61f); box-shadow:var(--shadow); display:grid; place-items:center; color:var(--brand-ink); font-weight:800; font-size:20px;}
+    .brand h1{font-size:20px; margin:0; letter-spacing:.06em}
+    .menu{display:flex; align-items:center; gap:18px}
+    .menu a{padding:.6rem .9rem; border-radius:999px; background:transparent; border:1px solid rgba(141,223,61,.25)}
+    .menu a:hover{background:rgba(141,223,61,.12); text-decoration:none}
+    .yt-btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:999px; background: var(--brand); color: var(--brand-ink); font-weight:700; box-shadow:var(--shadow); border: 1px solid rgba(0,0,0,.08);}
+    .yt-btn:hover{filter:saturate(110%); text-decoration:none}
+
+    .hero{padding:42px 0 28px}
+    .hero-grid{display:grid; gap:22px; grid-template-columns:1.2fr .8fr}
+    .hero .panel{padding:28px; border-radius:var(--radius-xl); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(141,223,61,.18)}
+    .hero h2{font-size:clamp(24px, 5vw, 38px); line-height:1.2; margin:0 0 .6rem}
+    .hero p{margin:0 0 1rem; color:var(--muted)}
+    .hero .actions{display:flex; gap:.8rem; flex-wrap:wrap}
+
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .stat{padding:18px; border-radius:16px; background:var(--panel); border:1px solid rgba(141,223,61,.18)}
+    .stat b{display:block; font-size:20px}
+    .stat span{color:var(--muted); font-size:12px}
+
+    section{padding:40px 0}
+    .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px}
+    .section-title h3{margin:0; font-size:22px}
+    .card-grid{display:grid; gap:16px; grid-template-columns:repeat(3, 1fr)}
+    .card{background:var(--panel); border-radius:16px; border:1px solid rgba(141,223,61,.18); overflow:hidden}
+    .card .frame{aspect-ratio:16/9; background:#000}
+    .card .body{padding:12px 14px}
+    .card h4{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:13px}
+
+    .schedule{display:grid; gap:12px; grid-template-columns:repeat(2,1fr)}
+    .sched{padding:14px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(141,223,61,.18)}
+    .sched time{font-weight:700}
+    .badge{display:inline-block; padding:.25rem .6rem; border-radius:999px; background:rgba(141,223,61,.2); color:var(--brand-ink); font-weight:700; font-size:12px; margin-left:.4rem}
+
+    .profile{display:grid; gap:18px; grid-template-columns:.8fr 1.2fr}
+    .avatar{width:100%; aspect-ratio:1/1; border-radius:20px; background:linear-gradient(145deg,#a0ff64,#6ac61f)}
+    .profile .panel{background:var(--panel); border:1px solid rgba(141,223,61,.18); border-radius:16px; padding:18px}
+
+    footer{padding:30px 0 60px; color:var(--muted)}
+    .socials{display:flex; gap:10px; flex-wrap:wrap}
+    .icon-btn{display:inline-flex; align-items:center; gap:.4rem; border:1px solid rgba(141,223,61,.2); padding:.5rem .8rem; border-radius:999px; background:transparent}
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .card-grid{grid-template-columns:1fr 1fr}
+      .schedule{grid-template-columns:1fr}
+      .profile{grid-template-columns:1fr}
+      .menu{display:none}
+      .menu--mobile{display:flex}
+    }
+    @media (max-width: 560px){
+      .card-grid{grid-template-columns:1fr}
+      .hero h2{font-size:clamp(20px,6vw,28px)}
+      .hero p{font-size:14px}
+    }
+
+    .menu--mobile{display:none; gap:10px}
+    .sheet{position:fixed; inset:0; background:rgba(0,0,0,.45); backdrop-filter: blur(6px); display:none}
+    .sheet-panel{position:absolute; right:0; top:0; width:min(320px, 88vw); height:100%; background:var(--panel); border-left:1px solid rgba(141,223,61,.25); padding:16px}
+    .sheet a{display:block; padding:12px; border-bottom:1px solid rgba(141,223,61,.12)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden>ず</div>
+        <h1>ずんだあああああ</h1>
+      </div>
+      <nav class="menu" aria-label="メイン">
+        <a href="#videos">最新動画</a>
+        <a href="#schedule">配信スケジュール</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="#other">その他/不具合</a>
+        <a class="yt-btn" target="_blank" rel="noopener" href="https://www.youtube.com/@shinkamigoto0908">YouTubeで見る</a>
+      </nav>
+      <div class="menu--mobile">
+        <a class="yt-btn" target="_blank" rel="noopener" href="https://www.youtube.com/@shinkamigoto0908">YouTube</a>
+        <button id="menuBtn" class="icon-btn" aria-haspopup="dialog" aria-controls="sheet" aria-label="メニューを開く">メニュー</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーロー -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="panel">
+          <h2>中学３年のなんかよくわかんないことをしてるチャンネル。<br>『ずんだあああああ』へようこそ！</h2>
+          <p>気の向くままにやってます。不定期更新はいつものことだとこれから3〜5年間は思っていてください。</p>
+          <div class="actions">
+            <a class="yt-btn" target="_blank" rel="noopener" href="https://www.youtube.com/@shinkamigoto0908">チャンネルへ</a>
+            <a class="icon-btn" href="#videos">最新動画を確認</a>
+          </div>
+          <div class="stats" aria-label="簡易統計">
+            <div class="stat"><b id="stat-subs">21</b><span>登録者</span></div>
+            <div class="stat"><b id="stat-videos">57</b><span>動画本数</span></div>
+            <div class="stat"><b id="stat-since">2023年3月16日</b><span>登録日</span></div>
+          </div>
+        </div>
+        <div class="panel" aria-label="ハイライト動画">
+          <div class="card">
+            <div class="frame">
+              <iframe width="100%" height="100%" src="https://youtu.be/__uR5xIFowk?feature=shared" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="body">
+              <h4>イチオシ動画タイトル「第1回こんなずんだもちCHは嫌だ!!」</h4>
+              <p>実は今第二弾の制作中なので待っていてくださいね！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新動画 -->
+    <section id="videos">
+      <div class="container">
+        <div class="section-title">
+          <h3>おすすめ動画２</h3>
+        </div>
+        <div class="card-grid" id="videoGrid"></div>
+      </div>
+    </section>
+
+    <!-- 配信スケジュール -->
+    <section id="schedule">
+      <div class="container">
+        <div class="section-title">
+          <h3>配信・動画投稿予定スケジュール（JST）</h3>
+        </div>
+        <div class="schedule" id="scheduleList" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section id="profile">
+      <div class="container profile">
+        <div class="avatar" aria-hidden></div>
+        <div class="panel">
+          <h3>プロフィール</h3>
+          <p>中学3年生になってから更に動画更新の頻度が下がりました。受験も控えているのでできるだけ2ヶ月に1回程度は出せたらいいなと思っています。</p>
+          <ul>
+            <li>活動内容：配信・動画編集・Web制作もちょっと</li>
+            <li>web制作はGitHubで行っています。→ <a href="https://github.com/Shinkamigoto0908" target="_blank">GitHub制作はこちら</a></li>
+            <li>目標：このチャンネルは大人になっても続ける予定なので、面白いチャンネルづくりをできたらいいなと思います。今はまだゆっくりムービーメーカーに手が出せない状態なのでiPhoneで制作しています。<br>できればWindowsのデスクトップ欲しいんですけどね。じゃないとYMM4とAvuitil入れられないんです…</li>
+            <li>時間間隔がなさすぎて少し危機感を持ったのでとりあえずApple Watch Series6をゲオモバイルで中古で手に入れました。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title"><h3>お問い合わせ</h3></div>
+        <p>お仕事・コラボのご連絡は現在受け付けておりません。</p>
+        <div class="socials" aria-label="SNSリンク">
+          <a class="icon-btn" target="_blank" rel="noopener" href="https://www.youtube.com/@shinkamigoto0908">YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 不具合 -->
+    <section id="other">
+      <div class="container card-grid" id="issueGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> ずんだあああああ(旧:ずんだもちch.shinkamigoto)</small>
+    </div>
+  </footer>
+
+  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="sheet-panel">
+      <button id="closeSheet" class="icon-btn" style="float:right">閉じる</button>
+      <h3>メニュー</h3>
+      <a href="#videos">最新動画</a>
+      <a href="#schedule">配信スケジュール</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#other">その他/不具合</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // モバイルメニュー
+    const sheet = document.getElementById('sheet');
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      sheet.style.display='block';
+      sheet.setAttribute('aria-hidden','false');
+    });
+    document.getElementById('closeSheet').addEventListener('click', () => {
+      sheet.style.display='none';
+      sheet.setAttribute('aria-hidden','true');
+    });
+
+    // 最新動画（カード生成用）
+    const videos = [
+      { title:'Minecraft番外編(ボイスロイド実況)', date:'2025-08-01', url:'https://youtu.be/2wNfVgh7RxM?feature=shared' },
+      { title:'準備中…しばらくお待ち下さい', date:'2025-07-25', url:'#' },
+      { title:'準備中…しばらくお待ち下さい', date:'2025-07-20', url:'#' }
+    ];
+    const videoGrid = document.getElementById('videoGrid');
+    videos.forEach(v=>{
+      const card = document.createElement('article');
+      card.className='card';
+      card.innerHTML=`
+        <div class="frame">
+          <iframe width="100%" height="100%" src="${v.url}" title="${v.title}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="body">
+          <h4>${v.title}</h4>
+          <p>投稿日：<time datetime="${v.date}">${v.date}</time></p>
+        </div>`;
+      videoGrid.appendChild(card);
+    });
+
+    // 配信・動画投稿予定スケジュール
+    const schedule = [
+      { day:'月', time:'20:00', title:'未定' },
+      { day:'火', time:'20:00', title:'未定' },
+      { day:'水', time:'20:30', title:'未定' },
+      { day:'木', time:'20:00', title:'未定' },
+      { day:'金', time:'20:00', title:'未定' },
+      { day:'土', time:'20:00', title:'未定' },
+      { day:'日', time:'20:00', title:'未定' }
+    ];
+    const scheduleList = document.getElementById('scheduleList');
+    schedule.forEach(s=>{
+      const div = document.createElement('div');
+      div.className='sched';
+      div.innerHTML=`<time>${s.day} ${s.time}</time><span class="badge">${s.title}</span>`;
+      scheduleList.appendChild(div);
+    });
+
+    // 不具合カード（増やせる）
+    const issues = [
+      { title:'お知らせなどはこちらに表示されます！更新されるのはいつになるかわかりませんが…', detail:'2025/08/15追記' },
+      { title:'現在上の配信・動画スケジュールは動作していません', detail:'多分自分が大人になるまでは変則的な投稿になると思います。そのため投稿のスケジュールを決めることができない状態です。そのため現段階では運用を控えています。' },
+      { title:'現在２件の不具合があります。', detail:'2025/08/15追記' },
+      { title:'Youtubeカードが再生されない', detail:'現在リンク指定をしているにも関わらず接続が拒否されてプレーヤーでの再生ができない状態です。' },
+      { title:'GitHubへのリンクがうまく行かない', detail:'aタグで指定しているはずなのになぜかブロックされてしまいます。<br>【8月16日追記】この問題は改善されました。' },
+      { title:'正しい動画プレーヤーが表示されない', detail:'おすすめ動画のところが動画ではなく何故かこのホームページがiframeで表示されています。至急対処しているところです。' }
+    ];
+    const issueGrid = document.getElementById('issueGrid');
+    issues.forEach(i=>{
+      const card = document.createElement('div');
+      card.className='card';
+      card.innerHTML=`<div class="body"><h4>${i.title}</h4><p>${i.detail}</p></div>`;
+      issueGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
